@@ -1,0 +1,67 @@
+//Assume an application requires list of user ID, password need to be stored and accessed randomly.
+//Use appropriate data structure to store and retrieve them. Cheek for the strength of the password before storing
+//and display its strength like weak, medium, strong, very strong.
+
+#include<bits/stdc++.h>
+
+using namespace std;
+
+class user
+{
+	int user_id=0;
+	string password;
+	string name;
+	public:
+		void create_account()
+		{
+			cout << "Enter a valid user name"<<endl;
+			cin>>name;
+			cout<<"Enter your password "<<endl;
+			cin>>password;
+			user_id++;
+		}
+		void verify_strength()
+		{
+			int x=password.length();
+			if(x>5)
+			  {
+			  	cout<<"password is strong";
+			  }
+			else if(x=5)
+			{
+				cout<<"Your password strength is moderate ";
+			}
+			else if(x<5 && x>1)
+			{
+				cout<<"Weak password ";
+			}
+			else
+			   cout<<"Invalid password";
+		}
+};
+
+
+int main()
+{
+	vector<class> objects;
+	int opt;
+	
+	//creating user accounts
+	cout<<" Choose Your option "<<endl;
+	cout<<"1.  Create new account "<<endl <<"2. Existing user login "<<endl<< "3. Exit"<<endl;
+	cin>>opt;
+	
+	switch(opt)
+	{
+		case 1:{
+			user.create_account();
+			user.verify_strength();
+			objects.push_back(user);
+			
+			break;
+		}
+			
+	}
+	
+	return 0;
+}
